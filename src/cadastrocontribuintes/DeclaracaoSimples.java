@@ -29,10 +29,10 @@ public class DeclaracaoSimples {
         if (pessoa.getTotalRendimentos() <= 12000) {
             return 0.0;
         } else if (pessoa.getTotalRendimentos() > 12000 && pessoa.getTotalRendimentos() < 24000) {
-            return pessoa.getTotalRendimentos() - 12000 * 15 / 100;
+            return pessoa.getTotalRendimentos() - 12000 * 0.15;
         } else if (pessoa.getTotalRendimentos() >= 24000) {
-            return ((pessoa.getTotalRendimentos() - 12000) * 15 / 100)
-                    + ((pessoa.getTotalRendimentos() - 24000) * 27.5 / 100);
+            return ((pessoa.getTotalRendimentos() - 12000) * 0.15)
+                    + ((pessoa.getTotalRendimentos() - 24000) * 0.275);
         }
         return 0.0;
     }
