@@ -13,6 +13,7 @@ public class DeclaracaoCompleta {
     
     private Pessoa pessoa;
     
+    
     public DeclaracaoCompleta(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
@@ -23,6 +24,20 @@ public class DeclaracaoCompleta {
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+    
+    public Double calculaImpostoCompleto() {
+        double imposto = 0.0;
+        if (pessoa.getTotalRendimentos() <= 12000) {
+            imposto = 0.0;
+        } else if (pessoa.getTotalRendimentos() > 12000 && pessoa.getTotalRendimentos() < 24000) {
+            imposto = pessoa.getTotalRendimentos() - 12000 * 0.15;
+        } else if (pessoa.getTotalRendimentos() >= 24000) {
+            imposto = ((pessoa.getTotalRendimentos() - 12000) * 0.15)
+                    + ((pessoa.getTotalRendimentos() - 24000) * 0.275);
+        }
+        
+        return imposto;
     }
     
 }
