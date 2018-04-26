@@ -5,6 +5,7 @@
  */
 package cadastrocontribuintes;
 
+import cadastrocontribuintes.negocio.Pessoa;
 import java.util.ArrayList;
 
 /**

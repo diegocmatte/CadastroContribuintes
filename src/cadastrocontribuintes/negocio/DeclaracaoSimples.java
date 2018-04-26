@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cadastrocontribuintes;
+package cadastrocontribuintes.negocio;
+
+import cadastrocontribuintes.negocio.Pessoa;
 
 /**
  *
  * @author 08104810
  */
-public class DeclaracaoCompleta {
-    
+public class DeclaracaoSimples {
+
     private Pessoa pessoa;
-    
-    
-    public DeclaracaoCompleta(Pessoa pessoa) {
+
+    public DeclaracaoSimples(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
 
@@ -25,19 +26,16 @@ public class DeclaracaoCompleta {
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
-    
-    public Double calculaImpostoCompleto() {
-        double imposto = 0.0;
+
+    public Double calculaImpostoParaPagar() {
         if (pessoa.getTotalRendimentos() <= 12000) {
-            imposto = 0.0;
+            return 0.0;
         } else if (pessoa.getTotalRendimentos() > 12000 && pessoa.getTotalRendimentos() < 24000) {
-            imposto = pessoa.getTotalRendimentos() - 12000 * 0.15;
+            return pessoa.getTotalRendimentos() - 12000 * 0.15;
         } else if (pessoa.getTotalRendimentos() >= 24000) {
-            imposto = ((pessoa.getTotalRendimentos() - 12000) * 0.15)
+            return ((pessoa.getTotalRendimentos() - 12000) * 0.15)
                     + ((pessoa.getTotalRendimentos() - 24000) * 0.275);
         }
-        
-        return imposto;
+        return 0.0;
     }
-    
 }
